@@ -2,17 +2,12 @@
 import React from 'react';
 import MovieCard from './movieCard';
 
-const MovieList = ({ movies }) => {
+const MovieList = ({ film }) => {
+  console.log(film);
   return (
-    <div>
-      {movies.map(movie => (
-        <MovieCard
-          
-          title={movie.title}
-          description={movie.description}
-          posterURL={movie.posterURL}
-          rating={movie.rating}
-        />
+    <div style={{display:"flex", flexWrap:"wrap", justifyContent:'space-between'}}>
+      {film.map((movie,index) => (
+        <MovieCard film={movie} key={index} />
       ))}
     </div>
   );
